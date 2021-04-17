@@ -4,11 +4,7 @@ import threading
 import pygame
 from pygame.locals import *
 
-import ga
-import bfs
-import bnb
-import ls
-import mst
+from algorithms import ga, bfs, bnb, ls, mst
 import gfx
 from utils import *
 
