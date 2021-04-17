@@ -8,10 +8,13 @@ WIDTH  = 300
 HEIGHT = 300
 FONT_HEIGHT = 20
 
-WINDOW_WIDTH  = WIDTH * 3
+WINDOW_WIDTH  = WIDTH * 4
 WINDOW_HEIGHT = (HEIGHT + FONT_HEIGHT + FONT_HEIGHT) * 2
 WINDOW_X = 10
-WINDOW_Y = 10 
+WINDOW_Y = 10
+
+DIVIDER_OFFSET = 2.5
+r = int((25 / totalCities) * 10)
 
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
@@ -45,7 +48,6 @@ def makeGraphFromCityList(cities):
 
 def makeCities(totalCities):
     cities = []
-    r = int((12 / totalCities) * 10)
     for i in range(totalCities):
         cities.append(pygame.math.Vector2(random.randrange(r, WIDTH-r), random.randrange(r, HEIGHT-r)))
     return cities

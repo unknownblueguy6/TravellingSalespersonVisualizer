@@ -69,6 +69,13 @@ ALGO_INFO = [
     },
 ]
 
+DIVIDERS = [
+    (0, HEIGHT + FONT_HEIGHT*2, WINDOW_WIDTH, HEIGHT + FONT_HEIGHT*2),
+    (WIDTH, 0, WIDTH, WINDOW_HEIGHT),
+    (2*WIDTH, 0, 2*WIDTH, WINDOW_HEIGHT),
+    (3*WIDTH, 0, 3*WIDTH, WINDOW_HEIGHT)
+]
+
 def simLoop():
     for i in range(len(ALGO_INFO)):
         if ALGO_INFO[i]['depends'] == -1:
@@ -90,7 +97,7 @@ def simLoop():
                         threads[j].daemon = True
                         threads[j].start()
         
-        gfx.drawDividers(surface)
+        gfx.drawDividers(surface, DIVIDERS)
 
         pygame.display.update()
         surface.fill(BLACK)

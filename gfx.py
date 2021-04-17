@@ -36,7 +36,6 @@ def drawPath(surface, cities, order):
         pygame.draw.aaline(surface, WHITE, cityA, cityB, 2)
         # drawTextCenter(surface, str(cities.index(cityA)), font, int(cityA.x), int(cityA.y))
 
-def drawDividers(surface):
-    pygame.draw.aaline(surface, WHITE, (0, HEIGHT + FONT_HEIGHT*2), (WINDOW_WIDTH, HEIGHT + FONT_HEIGHT*2))
-    pygame.draw.aaline(surface, WHITE, (WIDTH, 0), (WIDTH, WINDOW_HEIGHT))
-    pygame.draw.aaline(surface, WHITE, (2*WIDTH, 0), (2*WIDTH, WINDOW_HEIGHT))
+def drawDividers(surface, DIVIDERS):
+    for x1, y1, x2, y2 in DIVIDERS:
+        pygame.draw.aaline(surface, WHITE, (x1 - DIVIDER_OFFSET, y1), (x2 - DIVIDER_OFFSET, y2))
