@@ -4,7 +4,7 @@ import threading
 import pygame
 from pygame.locals import *
 
-from algorithms import ga, bfs, bnb, ls, mst
+from algorithms import ga, bfs, bnb, ls, mst, dp
 import gfx
 from utils import *
 
@@ -48,6 +48,15 @@ ALGO_INFO = [
         'depends' : -1,
         'namecoords'   : (WIDTH, HEIGHT+FONT_HEIGHT*2                   ),
         'lengthcoords' : (WIDTH, HEIGHT+FONT_HEIGHT*2+HEIGHT+FONT_HEIGHT)
+    },
+
+    {
+        'displacement' : (3 * WIDTH, FONT_HEIGHT),
+        'name' : 'Dynamic Programming',
+        'sim' : dp.DPSolver,
+        'depends' : -1,
+        'namecoords'   : (3*WIDTH, 0                   ),
+        'lengthcoords' : (3*WIDTH, HEIGHT+FONT_HEIGHT  ),  
     },
 
     {
