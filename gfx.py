@@ -28,11 +28,16 @@ def drawTextTopLeft(surface, text, color, font, x, y):
 def drawPath(surface, cities, order):
     if len(order) != len(cities):
         return
-    r = int((12 / len(cities)) * 10)
+    r = CITY_SIZE // len(cities)
+    r = max(MIN_CITY_SIZE, r)
+    order = order[order.index(0):] + order[:order.index(0)]
     for i in range(len(order)):
         cityA = cities[order[i % len(order)]]
         cityB = cities[order[(i+1) % len(order)]]
-        pygame.draw.circle(surface, RED, (int(cityA.x), int(cityA.y)), r)
+        if i == 0:
+            pygame.draw.circle(surface, BLUE, (int(cityA.x), int(cityA.y)), r)
+        else:
+            pygame.draw.circle(surface, RED, (int(cityA.x), int(cityA.y)), r)
         pygame.draw.aaline(surface, WHITE, cityA, cityB, 2)
         # drawTextCenter(surface, str(cities.index(cityA)), font, int(cityA.x), int(cityA.y))
 

@@ -13,11 +13,13 @@ WINDOW_HEIGHT = (HEIGHT + FONT_HEIGHT + FONT_HEIGHT) * 2
 WINDOW_X = 10
 WINDOW_Y = 10
 
-CITY_SIZE = 250
+CITY_SIZE = 300
+MIN_CITY_SIZE = 7.5
 DIVIDER_OFFSET = 2.5
 
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 #############################################
