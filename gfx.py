@@ -30,6 +30,7 @@ def drawPath(surface, cities, order):
         return
     r = CITY_SIZE // len(cities)
     r = max(MIN_CITY_SIZE, r)
+    r = min(MAX_CITY_SIZE, r)
     order = order[order.index(0):] + order[:order.index(0)]
     for i in range(len(order)):
         cityA = cities[order[i % len(order)]]
