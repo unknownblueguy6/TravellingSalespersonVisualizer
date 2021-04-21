@@ -65,6 +65,15 @@ ALGO_INFO = [
         'namecoords'   : (2*WIDTH, HEIGHT+FONT_HEIGHT*2                   ),
         'lengthcoords' : (2*WIDTH, HEIGHT+FONT_HEIGHT*2+HEIGHT+FONT_HEIGHT),  
     },
+
+    {
+        'displacement' : (3 * WIDTH, HEIGHT + 3 * FONT_HEIGHT),
+        'name' : 'Genetic Algorithm on MST Solution',
+        'sim' : ga.GASolver,
+        'depends' : 3,
+        'namecoords'   : (3*WIDTH, HEIGHT+FONT_HEIGHT*2                   ),
+        'lengthcoords' : (3*WIDTH, HEIGHT+FONT_HEIGHT*2+HEIGHT+FONT_HEIGHT),  
+    },
 ]
 
 DIVIDERS = [

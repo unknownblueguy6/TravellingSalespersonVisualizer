@@ -27,7 +27,10 @@ def simLoop():
             elif len(sims[ALGO_INFO[i]['depends']].bestOrder) != 0:
                 for j in range(len(ALGO_INFO)):
                     if ALGO_INFO[j]['depends'] != -1:
-                        sims.append(ALGO_INFO[j]['sim'](listOfCitiesList[j], sims[ALGO_INFO[j]['depends']].bestOrder[:], int(ALGO_INFO[j]['name'][-1])))
+                        if ALGO_INFO[j]['sim'] == ls.LocalSearchSolver:
+                            sims.append(ALGO_INFO[j]['sim'](listOfCitiesList[j], sims[ALGO_INFO[j]['depends']].bestOrder[:], int(ALGO_INFO[j]['name'][-1])))
+                        else:
+                            sims.append(ALGO_INFO[j]['sim'](listOfCitiesList[j], sims[ALGO_INFO[j]['depends']].bestOrder[:]))
                         threads.append(threading.Thread(target = sims[j].find))
                         threads[j].daemon = True
                         threads[j].start()
