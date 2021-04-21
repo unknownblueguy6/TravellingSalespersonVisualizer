@@ -28,7 +28,8 @@ class DPSolver:
                     if newDist < self.memo[(newVisited, newLastPoint)][0]:
                         self.memo[(newVisited, newLastPoint)] = (newDist, prevLastPoint)
                 
-        self.bestOrder, self.bestDistance = self.retraceOptimalPath()
+        self.bestOrder, _ = self.retraceOptimalPath()
+        self.bestDistance = calcPathDistance(self.cities, self.bestOrder)
     
     def retraceOptimalPath(self):
         pointsToRetrace = tuple(range(self.total))
