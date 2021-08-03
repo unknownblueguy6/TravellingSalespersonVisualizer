@@ -2,7 +2,7 @@
 
 A Pygame implementation to compare single-thread performance of different algorithms used to solve the Travelling Salesperson Problem.
 
-<img src= "./assets/cities_13.jpg" alt = "visualisation_13_cities">
+<img src= "./assets/cities_15.gif" alt = "visualisation_15_cities">
 
 ## Prerequisites
 
